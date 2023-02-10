@@ -86,11 +86,12 @@ public class RockPaperScissors {
                         (computerChoice.equalsIgnoreCase("scissors") && yourChoice.equalsIgnoreCase("paper"))) {
                 
                 System.out.println("You lose");
-            } else if (!yourChoice.equalsIgnoreCase("rock") && !yourChoice.equalsIgnoreCase("paper") && !yourChoice.equalsIgnoreCase("scissors")) {
+            } else if (yourChoice.equalsIgnoreCase(computerChoice)) {
+                System.out.println("It's a tie!"); 
+                System.out.println("You lose!!");
+            } else {
                 System.out.println("INVALID CHOICE");
                 System.exit(0);
-            } else {
-                System.out.println("You lose!!");
             }
         return result;
       }//result
