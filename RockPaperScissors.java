@@ -8,13 +8,12 @@ public class RockPaperScissors {
         System.out.println("Let's play Rock Paper Scissors.");
         System.out.println("When I say 'shoot', Choose: rock, paper, or scissors.\n");
         System.out.println("Are you ready? Write 'yes' if you are.");
-
-    //Task 1: See if the user wants to play. 
         String answer = scan.next();
+
         String yourChoice = "";
 
         if (answer.equalsIgnoreCase("yes")) {
-            System.out.println("Great! /n rock - paper - scissors, shoot!");
+            System.out.println("\nGreat! /n rock - paper - scissors, shoot!");
             yourChoice = scan.next();
             String computerChoice = computerChoice();
             
@@ -23,21 +22,7 @@ public class RockPaperScissors {
 
         } else {
             System.out.println("Darn, some other time...!");
-        }
-
-    /* • if the answer is yes: 
-             – print: Great!
-             – print: rock - paper - scissors, shoot!
-             – pick up user's choice.
-             – get the computer choice (can only be done after task 3).
-             – get the result (can only be done after task 4)
-             – print everything (can only be done after task 5).
-
-       • else:
-             – print: Darn, some other time...!        
-    */
-              
-
+        }          
         scan.close();
     }//main
     /**
@@ -54,14 +39,12 @@ public class RockPaperScissors {
     public static String computerChoice() {
         int number = (int)(Math.random() * 3);
         String compChoice = "";
-        if (number == 0) {
-            compChoice = "rock";
-        } else if (number == 1) {
-            compChoice = "paper";
-        } else if (number == 2) {
-            compChoice = "scissors";
-        } 
-        return compChoice;
+        switch(number) {
+            case 0: return "rock";
+            case 1: return "paper";
+            case 2: return "scissors";
+            default: return ""; //impossible
+        }
     }
     /**
      * Function name: result - It returns the result of the game.
